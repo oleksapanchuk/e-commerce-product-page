@@ -1,25 +1,17 @@
-import '@/App.scss';
 import Header from './components/layout/header/header.tsx';
+import ProductPage from './components/product-page/product-page.tsx';
+import Footer from './components/layout/footer/footer.tsx';
+import styles from './App.module.scss';
 
 function App() {
     return (
-        <>
+        <div className={styles.container}>
             <Header />
-            Sneaker Company Fall Limited Edition Sneakers These low-profile
-            sneakers are your perfect casual wear companion. Featuring a durable
-            rubber outer sole, they’ll withstand everything the weather can
-            offer. $125.00 50% $250.00 0 Add to cart
-            <div className='attribution'>
-                Challenge by{' '}
-                <a
-                    href='https://www.frontendmentor.io?ref=challenge'
-                    target='_blank'
-                >
-                    Frontend Mentor
-                </a>
-                . Coded by <a href='#'>Oleksandr Panchuk</a>.
-            </div>
-        </>
+
+            <ProductPage />
+
+            <Footer />
+        </div>
     );
 }
 

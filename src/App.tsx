@@ -1,37 +1,23 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import '@/App.scss';
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
         <>
-            <div>
-                <a href='https://vite.dev' target='_blank'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
+            Collections Men Women About Contact Sneaker Company Fall Limited
+            Edition Sneakers These low-profile sneakers are your perfect casual
+            wear companion. Featuring a durable rubber outer sole, they’ll
+            withstand everything the weather can offer. $125.00 50% $250.00 0
+            Add to cart
+            <div className='attribution'>
+                Challenge by{' '}
+                <a
+                    href='https://www.frontendmentor.io?ref=challenge'
+                    target='_blank'
+                >
+                    Frontend Mentor
                 </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img
-                        src={reactLogo}
-                        className='logo react'
-                        alt='React logo'
-                    />
-                </a>
+                . Coded by <a href='#'>Oleksandr Panchuk</a>.
             </div>
-            <h1>Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>
-                Click on the Vite and React logos to learn more
-            </p>
         </>
     );
 }

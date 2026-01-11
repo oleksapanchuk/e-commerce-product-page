@@ -1,21 +1,15 @@
-import { useEffect, useState } from 'react';
 import styles from './counter.module.scss';
 
 interface CounterProps {
+    value: number;
     setValue: (value: number) => void;
 }
 
-const Counter = ({ setValue }: CounterProps) => {
-    const [counter, setCounter] = useState<number>(0);
+const Counter = ({ value, setValue }: CounterProps) => {
+    const increment = () => setValue(value + 1);
+    const decrement = () => setValue(value - 1);
 
-    useEffect(() => {
-        setValue(counter);
-    }, [counter, setValue]);
-
-    const increment = () => setCounter(counter + 1);
-    const decrement = () => setCounter(counter - 1);
-
-    const disabled = counter === 0;
+    const disabled = value === 0;
 
     return (
         <div className={styles.container}>
@@ -26,7 +20,7 @@ const Counter = ({ setValue }: CounterProps) => {
             >
                 <img src='/icons/icon-minus.svg' alt='Minus' />
             </button>
-            <span className={styles.value}>{counter}</span>
+            <span className={styles.value}>{value}</span>
             <button onClick={increment} className={styles.increment}>
                 <img src='/icons/icon-plus.svg' alt='Plus' />
             </button>

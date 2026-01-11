@@ -25,9 +25,26 @@ const ProductDetails = ({ data, className }: ProductDetailsProps) => {
     const getPriceWithDiscount = (price: number, discount: number) =>
         price * discount;
 
+    const formatPrice = (price: number) => {
+        return '$' + (price / 100).toFixed(2);
+    };
+
+    const formatDiscount = (discount: number) => {
+        return discount * 100 + '%';
+    };
+
     const addToCart = () => {
         console.log('quantity: ', quantity);
+        setQuantity(0);
     };
+
+    const cartIcon = (
+        <img
+            src={'/icons/icon-cart.svg'}
+            alt={'Cart icon'}
+            className={styles.cart__icon}
+        />
+    );
 
     return (
         <div className={cn(styles.productDetailsContainer, className)}>
@@ -40,24 +57,29 @@ const ProductDetails = ({ data, className }: ProductDetailsProps) => {
             <p className={styles.productDetailsContainer__description}>
                 {data.description}
             </p>
-            <div>
-                <p>{getPriceWithDiscount(data.price, data.discount)}</p>
-                <span>{data.discount}</span>
+
+            <div className={styles.priceContainer}>
+                <div className={styles.priceContainer__priceWithDiscount}>
+                    <span className={styles.priceContainer__price}>
+                        {formatPrice(
+                            getPriceWithDiscount(data.price, data.discount)
+                        )}
+                    </span>
+                    <div className={styles.priceContainer__discount}>
+                        {formatDiscount(data.discount)}
+                    </div>
+                </div>
+
+                {data.discount && data.discount > 0 && (
+                    <span className={styles.priceContainer__oldPrice}>
+                        {formatPrice(data.price)}
+                    </span>
+                )}
             </div>
-            <div>{data.price}</div>
 
             <div className={styles.productDetailsContainer__actionBlock}>
-                <Counter setValue={setQuantity} />
-                <Button
-                    iconStart={
-                        <img
-                            src={'/icons/icon-cart.svg'}
-                            alt={'Cart icon'}
-                            className={styles.cart__icon}
-                        />
-                    }
-                    onClick={addToCart}
-                >
+                <Counter value={quantity} setValue={setQuantity} />
+                <Button iconStart={cartIcon} onClick={addToCart}>
                     Add to cart
                 </Button>
             </div>

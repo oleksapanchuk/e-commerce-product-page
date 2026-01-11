@@ -37,6 +37,48 @@
     }
 }
 
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    padding: 1rem 0;
+
+    @include screen(md) {
+        flex-direction: column;
+    }
+
+    &__priceWithDiscount {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__price {
+        font-size: 1.5rem;
+        color: $very-dark-blue;
+    }
+
+    &__discount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.1rem 0.5rem;
+        height: 1.5rem;
+        border-radius: 0.3rem;
+
+        background-color: $black;
+        color: $white;
+
+        font-size: 0.875rem;
+    }
+
+    &__oldPrice {
+        text-decoration: line-through;
+        color: $dark-grayish-blue;
+    }
+}
+
 .cart__icon {
     max-width: 1rem;
     max-height: 1rem;

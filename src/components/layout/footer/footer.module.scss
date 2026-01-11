@@ -1,4 +1,20 @@
-.container {
-    flex: 1;
+.footerContainer {
     display: flex;
+    justify-content: center;
+    margin-top: auto;
+
+    &__content {
+        padding: 1rem 0;
+        color: $dark-grayish-blue;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+
+        &:hover {
+            color: $very-dark-blue;
+        }
+    }
 }

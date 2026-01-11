@@ -78,7 +78,11 @@ const ProductDetails = ({ data, className }: ProductDetailsProps) => {
             </div>
 
             <div className={styles.productDetailsContainer__actionBlock}>
-                <Counter value={quantity} setValue={setQuantity} />
+                <Counter
+                    value={quantity}
+                    setValue={setQuantity}
+                    className={styles.counterBlock}
+                />
                 <Button iconStart={cartIcon} onClick={addToCart}>
                     Add to cart
                 </Button>

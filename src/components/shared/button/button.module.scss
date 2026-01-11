@@ -2,6 +2,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 1rem;
     padding: 1rem 1.5rem;
     transition: all 0.2s;
@@ -16,7 +17,7 @@
         color: $very-dark-blue;
 
         &:hover {
-            background-color: lighten($orange, 10%);
+            background-color: lighten($orange, 20%);
         }
     }
 }

@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.increment,
+.decrement {
+    display: flex;
+    align-items: center;
+    min-width: 6rem;
+    background: $light-grayish-blue;
+    padding: 1rem 1.5rem;
+}
+
+.increment {
+    justify-content: end;
+    border-radius: 0 8px 8px 0;
+}
+
+.decrement {
+    justify-content: start;
+    border-radius: 8px 0 0 8px;
+}
+
+.value {
+    display: flex;
+    justify-content: center;
+    background: $light-grayish-blue;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+
+    font-size: 1rem;
+    font-weight: 700;
+}

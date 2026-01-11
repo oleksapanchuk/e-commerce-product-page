@@ -1,5 +1,5 @@
 .header {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
@@ -20,6 +20,10 @@
         &:nth-child(2) {
             gap: 60px;
         }
+    }
+
+    @include screen(md) {
+        display: flex;
     }
 }
 
